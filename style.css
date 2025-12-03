@@ -1,0 +1,344 @@
+:root {
+    --momiji-red: #d94844;
+    --momiji-orange: #f29f05;
+    --momiji-yellow: #f2cb05;
+    --momiji-brown: #8c4e03;
+    --text-color: #333;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+    /* Background handled by layers now */
+    background: #333;
+}
+
+.bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 3s ease;
+    opacity: 0;
+}
+
+.bg-layer.active {
+    opacity: 1;
+}
+
+#leaves-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 550px;
+    /* Slightly smaller to make room */
+    width: 100%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    z-index: 10;
+    position: relative;
+    margin-left: 5%;
+    /* Push from left edge */
+    margin-right: auto;
+    /* Allow space on right */
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(217, 72, 68, 0.3);
+    padding-bottom: 20px;
+}
+
+.header-image {
+    max-width: 150px;
+    /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%;
+    /* Circular if it's a profile pic, or just rounded corners */
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--momiji-brown);
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--momiji-red);
+    margin-bottom: 20px;
+}
+
+.bio {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.bio p {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--momiji-brown);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--momiji-orange);
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 i {
+    color: var(--momiji-orange);
+}
+
+.achievement-group {
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--momiji-red);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 15px;
+}
+
+li::before {
+    content: "🍁";
+    position: absolute;
+    left: -5px;
+    font-size: 0.8em;
+    color: var(--momiji-orange);
+}
+
+ul ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+ul ul li::before {
+    content: "🍂";
+    color: var(--momiji-yellow);
+}
+
+.sns-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sns-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    /* Smaller buttons for bubble */
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: var(--momiji-brown);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sns-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.sns-btn.x-twitter:hover {
+    background: #000;
+}
+
+.sns-btn.youtube:hover {
+    background: #ff0000;
+}
+
+.sns-btn.instagram:hover {
+    background: #e1306c;
+}
+
+.sns-btn.note:hover {
+    background: #2cb696;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .sns-links {
+        gap: 15px;
+    }
+}
+
+.character-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.floating-character {
+    width: 250px;
+    /* Slightly larger */
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.speech-bubble {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    margin-right: 40px;
+    /* Position relative to character head */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 0.5s;
+    /* Slight delay for natural feel */
+    text-align: center;
+    max-width: 350px;
+    /* Increased width for labels */
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 40px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent;
+    display: block;
+    width: 0;
+}
+
+.bubble-text {
+    font-weight: bold;
+    color: var(--momiji-brown);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.sns-links-bubble {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.sns-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sns-label {
+    font-size: 0.7rem;
+    color: var(--momiji-brown);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        justify-content: center;
+        padding-bottom: 350px;
+        /* Space for character on mobile */
+    }
+
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .character-wrapper {
+        right: 50%;
+        transform: translateX(50%);
+        align-items: center;
+        bottom: 10px;
+    }
+
+    .speech-bubble {
+        margin-right: 0;
+    }
+
+    .speech-bubble::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momiji Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="bg-layer-1" class="bg-layer active"></div>
+    <div id="bg-layer-2" class="bg-layer"></div>
+    <div id="leaves-container"></div>
+
+
+
+
+    <div class="container">
+        <header class="profile-section">
+            <div class="profile-content">
+                <img src="header_image.jpg" class="header-image" alt="Profile Header">
+                <h1>Portfolio</h1>
+                <p class="tagline">娘の学費を稼ぐため日々研鑽中です。</p>
+
+                <div class="bio">
+                    <p>教育関連企業で10年勤務。転職経験あり。英語科教員免許保持。</p>
+                    <p>全ての人が何かを「継続」し、「成果を出す」ことの手伝いをライフワークにしたいと考えています。</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="achievements">
+                <h2><i class="fas fa-star"></i> 実績</h2>
+
+                <div class="achievement-group">
+                    <h3>生成AI講師実積</h3>
+                    <ul>
+                        <li>生徒数累積20名（2025/11月現在）</li>
+                        <li>３ヶ月で月10万円達成２名</li>
+                        <li>3ヶ月で月4万円達成3名</li>
+                    </ul>
+                </div>
+
+                <div class="achievement-group">
+                    <h3>ライティングの実績</h3>
+                    <ul>
+                        <li>レビュー記事の作成</li>
+                        <li>youtube (shorts)台本の作成
+                            <ul>
+                                <li>政治系・地理解説動画</li>
+                            </ul>
+                        </li>
+                        <li>youtubeゆっくり解説系台本（50本程度）
+                            <ul>
+                                <li>チャンネル立ち上げライター</li>
+                                <li>AIを用いた作業の型化をディレクション</li>
+                                <li>月30本毎日納品/他ライターの納品クオリティチェック担当</li>
+                            </ul>
+                        </li>
+                        <li>Note運営(フォロワー800名)/個人ブログ運営</li>
+                        <li>SEOライティング</li>
+                        <li>部署の生成AI導入推進
+                            <ul>
+                                <li>対面営業でのCVR向上に寄与できるA活用を推進</li>
+                            </ul>
+                        </li>
+                        <li>学習塾にまつわるブログ</li>
+                        <li>日本語独自教材の文章作成</li>
+                    </ul>
+                </div>
+
+
+
+            </section>
+
+            <section class="tools">
+                <h2><i class="fas fa-tools"></i> 対応可能ツール</h2>
+                <ul>
+                    <li>Genspark</li>
+                    <li>LLM全般</li>
+                    <li>Midjourny / ImageFX / seaart / StableDiffusion</li>
+                    <li>Vrew / Gamma / Canva</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="sns-links">
+        </footer>
+    </div>
+
+    <div class="character-wrapper">
+        <div class="speech-bubble">
+            <p class="bubble-text">SNSリンクはこちら</p>
+            <div class="sns-links-bubble">
+                <div class="sns-item">
+                    <span class="sns-label">X (Twitter)</span>
+                    <a href="https://x.com/ah24o1" target="_blank" class="sns-btn x-twitter"><i
+                            class="fab fa-x-twitter"></i></a>
+                </div>
+                <div class="sns-item">
+                    <span class="sns-label">YouTube</span>
+                    <a href="https://www.youtube.com/@%E3%81%8D%E3%81%A0%E3%81%91%E3%82%93AI%E3%81%A0%E3%81%91%E3%81%A7%E3%81%AF%E7%A8%BC%E3%81%92%E3%81%BE%E3%81%9B%E3%82%93"
+                        target="_blank" class="sns-btn youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="sns-item">
+                    <span class="sns-label">Instagram</span>
+                    <a href="https://www.instagram.com/luminaaiart/" target="_blank" class="sns-btn instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <div class="sns-item">
+                    <span class="sns-label">Note</span>
+                    <a href="https://note.com/ah24o" target="_blank" class="sns-btn note"><i
+                            class="fas fa-sticky-note"></i></a>
+                </div>
+            </div>
+        </div>
+        <img src="character.png" class="floating-character" alt="Character">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
